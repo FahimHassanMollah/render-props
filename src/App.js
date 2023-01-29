@@ -1,24 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import ClickCounter from './components/ClickCounter';
+import Counter from './components/Counter';
+import User from './components/User';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <User render={(isLoggedIn)=> isLoggedIn ? 'fahim' : 'guest customer'}/>
+      <Counter render={(counter,clickCounter) => <ClickCounter counter={counter} clickCounter={clickCounter}/>}/>
+    </>
   );
 }
 
